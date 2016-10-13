@@ -33,7 +33,7 @@ struct Column {
         self.postsCount = dic["postsCount"]?.intValue
         self.slug = dic["slug"]?.stringValue
         let d = dic["avatar"]!.dictionaryValue
-        avatar = Avatar(id: d["id"]?.stringValue, template: d["template"]?.stringValue)
+        avatar = Avatar(id: d["id"]?.stringValue, template: d["template"]?.stringValue, URLString: String("https://pic1.zhimg.com/\((d["id"]?.stringValue)!)_xl.jpg"))
         self.name = dic["name"]?.stringValue
         self.description = dic["description"]?.stringValue
         self.followersCount = dic["followersCount"]?.intValue

@@ -23,8 +23,8 @@ protocol LoadNext: class {
 extension LoadNext {
     
     func loadNext(view: ReloadableType) {
-        guard nextPageState.hasNext else { return }
-        guard nextPageState.isLoading else { return }
+        guard nextPageState.hasNext else { print("No next data..."); return }
+        guard !nextPageState.isLoading else { print("is loading..."); return }
         
         nextPageState.update(nextPageState.hasNext, isLoading: true)
         

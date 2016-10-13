@@ -12,5 +12,6 @@ struct Avatar {
     
     var id: String!
     var template: String!
+    var URLString: String!
     
 }

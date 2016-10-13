@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Request.get(URLString: URLStrings.start_image_url, successCallback: { value in
+            let urlString = value["img"].stringValue
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationKey.start_image_notification, object: nil, userInfo: ["startImageURL": urlString])
+        })
+        
         return true
     }
 
